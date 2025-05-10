@@ -1,28 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light-mode">
   <head>
     <meta charset="UTF-8" />
     <title>Quentin Transcript Viewer</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Quentin Transcript Viewer</h1>
+    <div class="app-container">
+      <header>
+        <h1>Quentin Transcript Viewer</h1>
+        <button id="themeToggleBtn" class="theme-toggle">🌙</button>
+      </header>
 
-    <div class="controls">
-      <label for="audioInput">Select Audio File:</label>
-      <input type="file" id="audioInput" accept="audio/*" />
-      <br />
-      <label for="jsonInput">Select Transcript JSON File:</label>
-      <input type="file" id="jsonInput" accept=".json" />
-      <br />
-      <audio id="audioPlayer" controls></audio>
-      <div class="buttons">
-        <button onclick="rewind()">⏪ Rewind 5s</button>
-        <button onclick="forward()">⏩ Forward 5s</button>
-      </div>
+      <main id="transcript"></main>
+
+      <footer class="control-panel">
+        <div class="progress-container">
+          <div class="progress-bar" id="progressBar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <div class="time-display">
+            <span id="currentTime">00:00:00</span> /
+            <span id="duration">00:00:00</span>
+          </div>
+        </div>
+
+        <div class="controls-row">
+          <div class="file-controls">
+            <div class="file-selection">
+              <button class="file-btn" id="audioSelectBtn">Audio</button>
+              <span id="audioFileName" class="file-name"></span>
+              <input
+                type="file"
+                id="audioInput"
+                accept="audio/*"
+                style="display: none"
+              />
+            </div>
+
+            <div class="file-selection">
+              <button class="file-btn" id="jsonSelectBtn">Transcript</button>
+              <span id="jsonFileName" class="file-name"></span>
+              <input
+                type="file"
+                id="jsonInput"
+                accept=".json"
+                style="display: none"
+              />
+            </div>
+          </div>
+
+          <div class="playback-controls">
+            <button id="playBtn" onclick="togglePlay()">▶️ Play</button>
+            <button id="stopBtn" onclick="stopAudio()">⏹️ Stop</button>
+            <button onclick="rewind()">⏪ Rewind 5s</button>
+            <button onclick="forward()">⏩ Forward 5s</button>
+          </div>
+        </div>
+
+        <audio id="audioPlayer" style="display: none"></audio>
+      </footer>
     </div>
-
-    <div id="transcript"></div>
 
     <script src="app.js"></script>
   </body>

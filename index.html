@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quentin Transcript Viewer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Quentin Transcript Viewer</h1>
+
+    <div class="controls">
+      <label for="audioInput">Select Audio File:</label>
+      <input type="file" id="audioInput" accept="audio/*" />
+      <br />
+      <label for="jsonInput">Select Transcript JSON File:</label>
+      <input type="file" id="jsonInput" accept=".json" />
+      <br />
+      <audio id="audioPlayer" controls></audio>
+      <div class="buttons">
+        <button onclick="rewind()">⏪ Rewind 5s</button>
+        <button onclick="forward()">⏩ Forward 5s</button>
+      </div>
+    </div>
+
+    <div id="transcript"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

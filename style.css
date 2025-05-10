@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f8f8f8;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+#transcript {
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #ccc;
+  height: 400px;
+  overflow-y: auto;
+  white-space: normal;
+  line-height: 1.5;
+}
+
+.word {
+  color: gray;
+  transition: color 0.2s ease;
+}
+
+.word.active {
+  color: black;
+  font-weight: bold;
+}
+
+.speaker {
+  color: #0074d9;
+  font-weight: bold;
+  display: block;
+  margin-top: 1em;
+}
